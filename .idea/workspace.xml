@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0697f99b-ee01-46f7-a928-5887c6ca3701" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gs-mysql-data.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/run_my_self/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/run_my_self/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/run_my_self/UserRepository.java" afterDir="false" />
+    <list default="true" id="0697f99b-ee01-46f7-a928-5887c6ca3701" name="Default Changelist" comment="add db">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/run_my_self/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/run_my_self/Plan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/PlanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/run_my_self/PlanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hello/PlanControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/run_my_self/PlanControllerTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -45,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -67,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/run_my_self/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-140">
+            <state relative-caret-position="-21">
               <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -100,6 +91,27 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/run_my_self/PlanControllerTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -126,6 +138,7 @@
         <option value="$PROJECT_DIR$/src/main/java/run_my_self/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/run_my_self/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/application.properties" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -342,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555225082512</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add db">
+      <created>1555255821822</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555255821822</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -358,6 +378,9 @@
     <history-entry file="resources_in_complete - 2019.04.14 at 23h 21m 35s.xml">
       <configuration name="resources in complete" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PlanControllerTests_noParamGreetingShouldReturnDefaultMessage - 2019.04.14 at 23h 26m 59s.xml">
+      <configuration name="PlanControllerTests.noParamGreetingShouldReturnDefaultMessage" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="802" extended-state="6" />
@@ -368,17 +391,17 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.24248926" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24248926" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Dependency Viewer" sideWeight="0.49928468" weight="0.32957748" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49213162" weight="0.32957748" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5064378" side_tool="true" visible="true" weight="0.57605636" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.490701" visible="true" weight="0.32957748" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.509299" side_tool="true" visible="true" weight="0.32957748" />
       <window_info anchor="bottom" id="Build" order="2" sideWeight="0.5801144" weight="0.3112676" />
-      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.49928468" weight="0.32957748" />
+      <window_info anchor="bottom" id="Messages" order="3" sideWeight="0.4985694" weight="0.32957748" />
       <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.49356222" visible="true" weight="0.57605636" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49284694" weight="0.57605636" />
       <window_info anchor="bottom" id="Debug" order="8" sideWeight="0.6587983" weight="0.49718308" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -432,7 +455,8 @@
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="greeting to plan" />
-    <option name="LAST_COMMIT_MESSAGE" value="greeting to plan" />
+    <MESSAGE value="add db" />
+    <option name="LAST_COMMIT_MESSAGE" value="add db" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/complete$Application.ic" NAME="Application Coverage Results" MODIFIED="1555160917935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -558,16 +582,6 @@
     <entry file="file://$PROJECT_DIR$/target/classes/application.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/run_my_self/PlanControllerTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/run_my_self/Plan.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -632,20 +646,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/run_my_self/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/run_my_self/PlanController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="212">
+          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/run_my_self/PlanController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+        <state relative-caret-position="60">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/run_my_self/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -662,10 +683,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/src/test/java/run_my_self/PlanControllerTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+        <state relative-caret-position="195">
+          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
         </state>
       </provider>
     </entry>
