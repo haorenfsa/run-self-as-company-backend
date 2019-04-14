@@ -1,4 +1,4 @@
-package hello;
+package run_my_self;
 
 public class Plan {
 
