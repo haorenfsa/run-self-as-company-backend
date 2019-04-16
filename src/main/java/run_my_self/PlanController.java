@@ -2,18 +2,24 @@ package run_my_self;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class PlanController {
-
-    private static final String template = "Hello, %s!";
+    @Autowired
+    private PlanRepository planRepository;
     private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping("/plans")
-    public Plan greeting(@RequestBody Plan plan) {
-        return new Plan(plan.getName(),plan.getDate());
+    @PostMapping("/plans")
+    public Plan post(@RequestBody Plan plan) {
+        planRepository.save(plan);
+        return plan;
+    }
+
+    @DeleteMapping("/plans/{id}")
+    public String delete(@PathVariable("id") Integer id) {
+        planRepository.deleteById(id);
+        return "success";
     }
 }

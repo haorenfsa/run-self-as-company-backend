@@ -1,22 +1,34 @@
 package run_my_self;
 
-public class Plan {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-    private long id;
+@Entity
+public class Plan {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
     private String name;
     private String date;
+    private Status status;
 
-    public Plan(String name, String date) {
-        this.id = 1;
-        this.name = name;
-        this.date = date;
+    enum Status {
+        Unknown,
+        Open,
+        Done,
     }
 
-    public long getId() {
+    public Plan() {
+        this.status = Status.Open;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -34,5 +46,13 @@ public class Plan {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }

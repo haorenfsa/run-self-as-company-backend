@@ -15,6 +15,7 @@
  */
 package run_my_self;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -37,16 +38,24 @@ public class PlanControllerTests {
 
     @Autowired
     private MockMvc mockMvc;
+    @Autowired
+    private run_my_self.PlanRepository planRepository;
 
     @Test
     public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
-        JSONObject reqBody = new JSONObject();
-        reqBody.put("name", "planName");
-        reqBody.put("date", "20180413");
-        this.mockMvc.perform(post("/plans").content(reqBody.toString()).contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)).
-                andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.name").value("planName"))
-                .andExpect(jsonPath("$.id").value(1));
+
+        try {
+            JSONObject reqBody = new JSONObject();
+            reqBody.put("name", "planName");
+            reqBody.put("date", "20180413");
+            this.mockMvc.perform(post("/plans").content(reqBody.toString()).contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)).
+                    andDo(print()).andExpect(status().isOk())
+                    .andExpect(jsonPath("$.id").value(1))
+                    .andExpect(jsonPath("$.name").value("planName"))
+                    .andExpect(jsonPath("$.status").value("Open"));
+        } finally {
+            planRepository.deleteAll();
+        }
     }
 
 }
