@@ -15,8 +15,8 @@
  */
 package run_my_self;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.hamcrest.Matchers.hasSize;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -42,7 +42,7 @@ public class PlanControllerTests {
     private run_my_self.PlanRepository planRepository;
 
     @Test
-    public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
+    public void postPlanOK() throws Exception {
 
         try {
             JSONObject reqBody = new JSONObject();
@@ -50,9 +50,77 @@ public class PlanControllerTests {
             reqBody.put("date", "20180413");
             this.mockMvc.perform(post("/plans").content(reqBody.toString()).contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)).
                     andDo(print()).andExpect(status().isOk())
-                    .andExpect(jsonPath("$.id").value(1))
-                    .andExpect(jsonPath("$.name").value("planName"))
-                    .andExpect(jsonPath("$.status").value("Open"));
+                    .andExpect(jsonPath("$.data.name").value("planName"))
+                    .andExpect(jsonPath("$.data.status").value("Open"));
+        } finally {
+            planRepository.deleteAll();
+        }
+    }
+
+    @Test
+    public void getPlanOK() throws Exception {
+
+        try {
+            JSONObject reqBody = new JSONObject();
+            reqBody.put("name", "planName");
+            reqBody.put("date", "20180413");
+            for (int i = 0; i < 3; i++) {
+                this.mockMvc.perform(post("/plans").content(reqBody.toString()).
+                        contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)).
+                        andExpect(status().isOk());
+            }
+            reqBody = new JSONObject();
+            reqBody.put("name", "planName");
+            reqBody.put("date", "20180414");
+            for (int i = 0; i < 2; i++) {
+                this.mockMvc.perform(post("/plans").content(reqBody.toString()).
+                        contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)).
+                        andExpect(status().isOk());
+            }
+            this.mockMvc.perform(get("/plans")).andExpect(status().isOk()).
+                    andExpect(jsonPath("$.data").isArray()).
+                    andExpect(jsonPath("$.data", hasSize(5)));
+            this.mockMvc.perform(get("/plans?date=20180414")).andExpect(status().isOk()).
+                    andExpect(jsonPath("$.data").isArray()).
+                    andExpect(jsonPath("$.data", hasSize(2)));
+            this.mockMvc.perform(get("/plans?date=20180413")).andExpect(status().isOk()).
+                    andExpect(jsonPath("$.data").isArray()).
+                    andExpect(jsonPath("$.data", hasSize(3)));
+
+        } finally {
+            planRepository.deleteAll();
+        }
+    }
+
+    @Test
+    public void putPlanOK() throws Exception {
+
+        try {
+            JSONObject reqBody = new JSONObject();
+            reqBody.put("name", "planName");
+            reqBody.put("date", "20180413");
+            reqBody.put("status","Done");
+            this.mockMvc.perform(put("/plans/2").content(reqBody.toString()).contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)).
+                    andDo(print()).andExpect(status().isOk()).
+                    andExpect(jsonPath("$.data.id").value(2));
+        } finally {
+            planRepository.deleteAll();
+        }
+    }
+
+    @Test
+    public void deletePlanOK() throws Exception {
+
+        try {
+            JSONObject reqBody = new JSONObject();
+            reqBody.put("name", "planName");
+            reqBody.put("date", "20180413");
+            this.mockMvc.perform(post("/plans").content(reqBody.toString()).contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)).
+                    andDo(print()).andExpect(status().isOk())
+                    .andExpect(jsonPath("$.data.id").value(1))
+                    .andExpect(jsonPath("$.data.name").value("planName"))
+                    .andExpect(jsonPath("$.data.status").value("Open"));
+            this.mockMvc.perform(delete("/plans/1")).andDo(print()).andExpect(status().isOk());
         } finally {
             planRepository.deleteAll();
         }
